@@ -1,0 +1,21 @@
+version: '3'
+
+services: 
+ angular:
+  build: Water-Management-Dashboard-UI
+  ports: 
+   - "4200:80"
+ express:
+  build: Water-Management-Dashboard-Backend
+  ports: 
+   - "3000:3000"
+   - "3005:3005"
+  links:
+   - database
+ database:
+  container_name: mongo
+  image: mongo
+  volumes:
+    - ./db:/data/db
+  ports: 
+   - "27017:27017"

@@ -1,0 +1,56 @@
+<div class="container">
+<div class="container">
+  <div class="row" *ngIf="!display">
+    <div class="col-6">
+      <h5>Annual Rate Of Consumption</h5>
+      <ngx-charts-bar-horizontal
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="bargraphdata"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+      >
+    </ngx-charts-bar-horizontal></div>
+    <div class="col-6">
+        <h5>Water Quality (Acidic Nature)</h5>
+        <ngx-charts-bar-vertical
+        [view]="view1"
+        [scheme]="colorScheme1"
+        [results]="data"
+        [gradient]="gradient1"
+        [xAxis]="showXAxis1"
+        [yAxis]="showYAxis1"
+        [legend]="showLegend1"
+        [showXAxisLabel]="showXAxisLabel1"
+        [showYAxisLabel]="showYAxisLabel1"
+        [xAxisLabel]="xAxisLabel1"
+        [yAxisLabel]="yAxisLabel1"
+        >
+      </ngx-charts-bar-vertical>
+      </div> 
+    <div class="col-12">
+        <h5>Consumption Rate Per Provinces</h5>
+        <ngx-charts-pie-chart
+        [view]="view2"
+        [scheme]="colorScheme2"
+        [results]="single2"
+        [legend]="showLegend2"
+        [explodeSlices]="explodeSlices2"
+        [labels]="showLabels2"
+        [doughnut]="doughnut2"
+        [gradient]="gradient2"
+        >
+      </ngx-charts-pie-chart>
+    </div>
+  </div>
+    <div class="d-flex align-items-center" *ngIf="display">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+</div>
